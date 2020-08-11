@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import Card from "react-bootstrap/Card";
 import axios from 'axios';
 import Spinner from "react-bootstrap/Spinner";
@@ -10,7 +10,7 @@ function CurrencyRatesBlock() {
     const [currencies, setCurrencies] = useState([]);
     const [date, setDate] = useState('');
 
-    function getRates() {
+    const getRates = useCallback(() => {
         axios.get("https://www.cbr-xml-daily.ru/daily_json.js").then((response) => {
             let tmpDate = new Date(response.data.Date);
             //console.log(tmpDate.getMonth());
@@ -19,7 +19,7 @@ function CurrencyRatesBlock() {
 
             setCurrencies(Object.values(response.data.Valute).filter(valute => currToGet.includes(valute.CharCode)));
         });
-    }
+    }, [currToGet, months]);
 
     useEffect(() => {
         if (!initialized) {
@@ -27,7 +27,7 @@ function CurrencyRatesBlock() {
 
             setInitialized(true);
         }
-    });
+    }, [initialized, getRates]);
 
     return (
         <Card className="currency-rates-block">

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import Card from "react-bootstrap/Card";
 import axios from 'axios';
 import Spinner from "react-bootstrap/Spinner";
@@ -37,7 +37,7 @@ function NewsBlock() {
     // }
 
 
-    function getFeeds() {
+    const getFeeds = useCallback(() => {
         let obj = {};
         let promises = [];
         topics.forEach((topic, index) => {
@@ -51,7 +51,7 @@ function NewsBlock() {
             setFeeds(obj);
             //console.log(JSON.stringify(obj));
         });
-    }
+    }, [topics]);
 
     useEffect(() => {
         if (!initialized) {
@@ -59,7 +59,7 @@ function NewsBlock() {
 
             setInitialized(true);
         }
-    });
+        }, [initialized, getFeeds]);
 
     const [rerender, setRerender] = useState(1);
 

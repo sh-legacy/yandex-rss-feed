@@ -1,5 +1,4 @@
 import React from 'react';
-import { observer } from 'mobx-react';
 import NewsBlock from "../components/NewsBlock";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -14,7 +13,7 @@ function FeedPage() {
             <Row>
                 <Col>
                     <div className="logo-container">
-                        <div className="yandex-logo"></div>
+                        <div className="yandex-logo"/>
                     </div>
                 </Col>
             </Row>
@@ -32,4 +31,4 @@ function FeedPage() {
     );
 }
 
-export default observer(FeedPage);
+export default FeedPage;
