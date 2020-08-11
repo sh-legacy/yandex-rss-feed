@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { observer } from 'mobx-react';
 import NewsBlock from "../components/NewsBlock";
 import Container from "react-bootstrap/Container";
@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import CurrencyRatesBlock from "../components/CurrencyRatesBlock";
 
-function FeedPage({ feedsStore }) {
+function FeedPage() {
 
 
     return (
@@ -20,7 +20,7 @@ function FeedPage({ feedsStore }) {
             </Row>
             <Row>
                 <Col>
-                    <NewsBlock feedsStore={feedsStore}/>
+                    <NewsBlock/>
                 </Col>
             </Row>
             <Row>

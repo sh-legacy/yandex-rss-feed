@@ -6,14 +6,12 @@ import {BrowserRouter, Switch, Route} from "react-router-dom";
 import FeedPage from "./pages/FeedPage";
 import './assets/scss/App.scss';
 
-import { FeedsStore } from "./store";
-const feedsStore = new FeedsStore();
 
 ReactDOM.render(
         <BrowserRouter>
             <Switch>
                 <Route path="/" render={props => {
-                    return <FeedPage {...props} feedsStore={ feedsStore }/>
+                    return <FeedPage {...props} />
                 }}/>
             </Switch>
         </BrowserRouter>,
