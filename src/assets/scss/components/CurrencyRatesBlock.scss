@@ -1,0 +1,52 @@
+.currency-rates-block {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 15px;
+
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  .card-body {
+    padding: 0;
+  }
+
+  .rates-list {
+    margin-bottom: -15px;
+
+    li {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+
+      .currency-descr {
+        h5 {
+          margin-bottom: 0;
+        }
+
+        p {
+          color: rgba(0, 0, 0, 0.5);
+          font-size: .9rem;
+        }
+      }
+      .currency-value {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        h5 {
+          font-weight: 400;
+        }
+        p {
+          font-size: .9rem;
+          &.green {
+            color: #1fa024;
+          }
+          &.red {
+            color: #ff1100;
+          }
+        }
+      }
+    }
+  }
+}

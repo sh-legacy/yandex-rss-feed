@@ -1,0 +1,43 @@
+body {
+  background-color: #eee;
+}
+
+.row {
+  margin-bottom: 15px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin: 25px 0;
+
+  div.yandex-logo {
+    width: 140px;
+    height: 100px;
+    background: url(//yastatic.net/s3/home-static/_/x/Q/xk8YidkhGjIGOrFm_dL5781YA.svg) no-repeat;
+  }
+}
+
+.loading-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.fade-enter{
+  opacity: 0;
+}
+.fade-exit{
+  opacity: 1;
+}
+.fade-enter-active{
+  opacity: 1;
+}
+.fade-exit-active{
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-exit-active{
+  transition: opacity 500ms;
+}

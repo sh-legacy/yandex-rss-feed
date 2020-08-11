@@ -1,14 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import {BrowserRouter, Switch, Route} from "react-router-dom";
+import FeedPage from "./pages/FeedPage";
+import './assets/scss/App.scss';
+
+import { FeedsStore } from "./store";
+const feedsStore = new FeedsStore();
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+        <BrowserRouter>
+            <Switch>
+                <Route path="/" render={props => {
+                    return <FeedPage {...props} feedsStore={ feedsStore }/>
+                }}/>
+            </Switch>
+        </BrowserRouter>,
+    document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change

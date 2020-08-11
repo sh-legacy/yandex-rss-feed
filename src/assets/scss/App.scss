@@ -1,0 +1,11 @@
+@import "~bootstrap/scss/bootstrap";
+
+@import "pages/FeedPage";
+
+@import "components/NewsBlock";
+@import "components/CurrencyRatesBlock";
+
+* {
+  margin: 0;
+  padding: 0;
+}
